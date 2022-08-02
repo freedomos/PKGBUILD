@@ -1,0 +1,28 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=freedomos-welcome
+_pkgname=freedomos-welcome
+_destname1="/etc/skel/.config/"
+_destname2="/usr/"
+_licensedir="/usr/share/freedomos/licenses/"
+pkgver=1.1
+pkgrel=01
+pkgdesc="Welcome application for FreedomOS"
+arch=('any')
+url="https://github.com/freedomos/freedomos"
+license=('GPL3')
+makedepends=('git')
+depends=('libwnck3')
+provides=("${pkgname}")
+conflicts=('freedomos-welcome')
+install='readme.install'
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+${url}")
+sha256sums=('SKIP')
+package() {
+#	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+#	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+	mkdir -p "${pkgdir}${_destname1}"
+	cp -r "${srcdir}/${_pkgname}/${_destname1}/"* "${pkgdir}${_destname1}"
+	mkdir -p "${pkgdir}${_destname2}"
+	cp -r "${srcdir}/${_pkgname}/${_destname2}/"* "${pkgdir}${_destname2}"
+}
