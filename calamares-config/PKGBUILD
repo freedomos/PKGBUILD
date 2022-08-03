@@ -1,0 +1,27 @@
+
+
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=freedomos-calamares-config
+_pkgname=freedomos-calamares-config
+_destname="/etc/calamares"
+#_licensedir="/usr/share/freedomos/licenses/"
+pkgver=20.07
+pkgrel=10
+pkgdesc="calamares for freedomos"
+arch=('any')
+url="https://github.com/freedomos/${_pkgname}"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=('arcod-calamares-config-dev-git' 'arcod-calamares-config-next-git')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/freedomos/${_pkgname}.git")
+sha256sums=('SKIP')
+install='readme.install'
+package() {
+	mkdir -p "${pkgdir}${_licensedir}${_pkgname}"
+	#mv "${srcdir}/${_pkgname}/"LICENSE "${pkgdir}${_licensedir}${_pkgname}/LICENSE"
+	mkdir -p "${pkgdir}${_destname}"
+	cp -r "${srcdir}/${_pkgname}/calamares/"* "${pkgdir}${_destname}"
+}

@@ -1,0 +1,25 @@
+
+
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=freedomos-kde-profile
+_pkgname=freedomos-kde-profile
+_destname="/etc"
+#_licensedir="/usr/share/freedomos/licenses/"
+pkgver=1.0
+pkgrel=1.1
+pkgdesc="KDE Profile for FreedomOS"
+arch=('any')
+url="https://github.com/freedomos/${_pkgname}"
+license=('GPL3')
+makedepends=('git')
+depends=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/freedomos/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	mkdir -p "${pkgdir}${_licensedir}${_pkgname}"
+	#mv "${srcdir}/${_pkgname}/"LICENSE "${pkgdir}${_licensedir}${_pkgname}/LICENSE"
+	mkdir -p "${pkgdir}${_destname}"
+	cp -r "${srcdir}/${_pkgname}/skel"* "${pkgdir}${_destname}"
+}
