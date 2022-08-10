@@ -1,0 +1,35 @@
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
+
+pkgname=freedomos-grub-theme
+_pkgname=freedomos-grub-theme
+destinationdir1="/usr/share/grub/themes/freedomos"
+destinationdir2="/boot/grub/themes/freedomos"
+_licensedir="/usr/share/arcolinux/licenses/"
+pkgver=20220809
+pkgrel=01
+pkgdesc="FreedomOS Grub Theme"
+arch=(any)
+url="https://github.com/freedomos/freedomos-grub-theme"
+license=('GPL3')
+depends=(grub)
+optdepends=('grub-customizer')
+makedepends=('git')
+conflicts=('freedomos-grub-theme')
+source=("$pkgname::git+${url}")
+md5sums=('SKIP')
+package() {
+    #install -d "$pkgdir/${destinationdir1}"
+    install -d $pkgdir/${destinationdir1}/icons
+    #assets folder
+    install -Dm 755 $srcdir/$pkgname/assets/assets-white/icons-1080p/* $pkgdir/$destinationdir1/icons/
+    #background folder
+    install -Dm 755 $srcdir/$pkgname/backgrounds/1080p/* $pkgdir/$destinationdir1/
+    #common folder
+    install -Dm 755 $srcdir/$pkgname/common/* $pkgdir/$destinationdir1/
+    #theme
+    install -Dm 755 $srcdir/$pkgname/config/theme.txt $pkgdir/$destinationdir1/theme.txt
+
+    #copy to /boot/grub/themes
+    mkdir -p ${pkgdir}/boot/grub/themes
+    cp -r ${pkgdir}/$destinationdir1 ${pkgdir}/$destinationdir2
+}

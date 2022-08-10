@@ -1,12 +1,10 @@
-
-
-# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
 pkgname=freedomos-kde-profile
 _pkgname=freedomos-kde-profile
 _destname="/etc"
 #_licensedir="/usr/share/freedomos/licenses/"
-pkgver=1.0
-pkgrel=1.1
+pkgver=1.1
+pkgrel=1.6
 pkgdesc="KDE Profile for FreedomOS"
 arch=('any')
 url="https://github.com/freedomos/${_pkgname}"

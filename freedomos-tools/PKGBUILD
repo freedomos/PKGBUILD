@@ -1,0 +1,23 @@
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
+pkgname=freedomos-tools
+_pkgname=freedomos-tools
+_destname2="/usr/"
+_licensedir="/usr/share/freedomos/licenses/"
+pkgver=1.0.1
+pkgrel=1
+pkgdesc="Terminal shortcuts for FreedomOS"
+arch=('any')
+url="https://github.com/freedomos/freedomos-tools"
+license=('GPL3')
+makedepends=('git')
+depends=('libwnck3')
+provides=("${pkgname}")
+conflicts=('freedomos-tools')
+install='readme.install'
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+${url}")
+sha256sums=('SKIP')
+package() {
+	mkdir -p "${pkgdir}${_destname2}"
+	cp -r "${srcdir}/${_pkgname}/${_destname2}/"* "${pkgdir}${_destname2}"
+}

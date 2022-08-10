@@ -1,7 +1,4 @@
-# Maintainer: Jonas Witschel <diabonas@archlinux.org>
-# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
-# Contributor: Malte Rabenseifner <malte@zearan.de>
-# Contributor: John Gerritse <reaphsharc@gmail.com>
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
 
 pkgname=lsb-release
 pkgver=2.0.r48.3cf5103

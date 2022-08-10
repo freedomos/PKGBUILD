@@ -1,11 +1,9 @@
-
-
-# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
 pkgname=freedomos-calamares-config
 _pkgname=freedomos-calamares-config
 _destname="/etc/calamares"
 #_licensedir="/usr/share/freedomos/licenses/"
-pkgver=20.07
+pkgver=20.10
 pkgrel=10
 pkgdesc="calamares for freedomos"
 arch=('any')

@@ -1,0 +1,19 @@
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
+pkgname=freedomos-neofetch
+pkgver=7.1.2
+pkgrel=3
+pkgdesc="A CLI system information tool written in BASH that supports displaying images."
+arch=('x86_64')
+url="https://github.com/freedomos/${pkgname}"
+license=('MIT')
+depends=('bash')
+source=("https://github.com/freedomos/${pkgname}/archive/${pkgver}.tar.gz")
+#md5sums=('37ba9026fdd353f66d822fdce16420a8')
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}/"
+  make DESTDIR="$pkgdir" install
+  install -D -m644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+}
+sha256sums=('6cedaab73ca68bfdc1b91b837474188e1da60d464c23eac7302bd387d386e003')
+sha256sums=('0e6f4d615b1d751ecb78ac9b197305fd6732ec964a5786a13a077e1ba44db1ca')

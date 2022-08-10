@@ -1,5 +1,6 @@
 # Contributor: Zeph <zeph33@gmail.com>
 # Maintainer: Zeph <zeph33@gmail.com>
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
 # https://gitlab.manjaro.org/packages/extra/pamac
 ENABLE_FAKE_GNOME_SOFTWARE=0
 

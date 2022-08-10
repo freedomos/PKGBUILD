@@ -1,11 +1,11 @@
-# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+# Maintainer: Frazer Grant <frazergrant345@gmail.com>
 pkgname=freedomos-welcome
 _pkgname=freedomos-welcome
 _destname1="/etc/skel/.config/"
 _destname2="/usr/"
 _licensedir="/usr/share/freedomos/licenses/"
-pkgver=1.3
-pkgrel=05
+pkgver=1.4.3
+pkgrel=06
 pkgdesc="Welcome application for FreedomOS"
 arch=('any')
 url="https://github.com/freedomos/freedomos"
