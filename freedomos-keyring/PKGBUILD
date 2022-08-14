@@ -1,0 +1,25 @@
+# Based on the file created for Arch Linux by:
+# Pierre Schmitz <pierre@archlinux.de>
+
+pkgname=freedomos-keyring
+pkgver=20220811
+pkgrel=6
+pkgdesc='FreedomOS GPG keyring'
+arch=('any')
+url='http:/freedomos.info'
+license=('GPL')
+install="${pkgname}.install"
+source=('Makefile'
+        'freedomos.gpg'
+        'freedomos-revoked'
+        'freedomos-trusted')
+validpgpkeys=('192F188F59ED781C664BC13B744CD66F50E878B8') # Frazer
+sha256sums=('61b80f5b7e48364a93f516c65a57d78d50332c09dbb0d1fa1173e425939b8e4c'
+            '20b484c143c618ed9080f11f3c1b1a4e9fb737f3914abb37c03de87f09d3920b'
+            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+            '74572914c560c8104ed2fdeb3953b1472e53d7b2f93dda7a063ea3dd3321db94')
+
+package() {
+	cd "${srcdir}"
+	make PREFIX=/usr DESTDIR=${pkgdir} install
+}

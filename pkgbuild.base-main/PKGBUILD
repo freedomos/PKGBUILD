@@ -1,0 +1,35 @@
+# Maintainer: echo -n 'bWF0dEBnZXRjcnlzdC5hbA==' | base64 --decode
+# Arch Contributor: Arch Linux Team
+# Arch Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Arch Contributor: Eli Schwartz <eschwartz[at]archlinux[dot]org>
+
+pkgname=base
+pkgver=3
+pkgrel=3
+pkgdesc='Minimal package set to define a basic FreedomOS installation'
+url='https://freedomos.co.uk'
+arch=('any')
+license=('GPL')
+depends=(
+  # very very base
+  'filesystem' 'gcc-libs' 'glibc' 'bash'
+
+  # POSIX tools
+  'coreutils' 'file' 'findutils' 'gawk' 'grep' 'procps-ng' 'sed' 'tar'
+
+  # standard linux toolset
+  'gettext' 'pciutils' 'psmisc' 'shadow' 'util-linux' 'bzip2' 'gzip' 'xz'
+
+  # Arch defined requirements
+  'licenses' 'pacman' 'archlinux-keyring' 'systemd' 'systemd-sysvcompat'
+
+  # networking, ping, etc
+  'iputils' 'iproute2'
+  
+
+)
+optdepends=(
+  'linux: bare metal support'
+)
+
+# vim: ts=2 sw=2 et:
