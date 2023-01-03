@@ -3,7 +3,7 @@
 # Arch Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2022.08.13
+pkgver=2023.01.01
 pkgrel=6
 pkgdesc='Base FreedomOS Linux filesystem'
 arch=('any')
